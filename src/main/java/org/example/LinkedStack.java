@@ -2,6 +2,9 @@ package org.example;
 
 public class LinkedStack<E> implements Stack<E> {
     private SinglyLinkedList<E> singlyLinkedList = new SinglyLinkedList<>();
+    public LinkedStack() {
+
+    }
     @Override
     public int size() {
         return this.singlyLinkedList.size();
