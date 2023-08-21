@@ -65,4 +65,23 @@ public class SinglyLinkedList<E> {
         size--;
         return ans;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (o == null)
+            return false;
+        if (this.getClass() != o.getClass())
+            return false;
+        SinglyLinkedList other = (SinglyLinkedList) o;
+        if (size != other.size())
+            return false;
+        Node walkA = this.head;
+        Node walkB = other.head;
+        while (walkA != null) {
+            if (!walkA.getElement().equals(walkB.getElement()))
+                return false;
+            walkA = walkA.getNext();
+            walkB = walkB.getNext();
+        }
+        return true;
+    }
 }
